@@ -1,0 +1,19 @@
+{
+  "name": "csvjs",
+  "description": "A JSON to csv converter for nodeJS",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": "Kris Windham",
+  "private": false,
+  "main": "./lib",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": ">= 1.1.x",
+    "mocha": "*",
+    "should": "*",
+    "assert": "*",
+    "docco": ">0"
+  },
+  "engines": { "node": "0.4 || 0.6 || 0.7" }
+}
