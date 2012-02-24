@@ -1,13 +1,12 @@
 {
-  "name": "csvjs",
+  "name": "jsoncsv",
   "description": "A JSON to csv converter for nodeJS",
   "version": "0.0.1",
   "homepage": "",
-  "author": "Kris Windham",
+  "author": "Kris Windham <krsiwindham@gmail.com>",
   "private": false,
   "main": "./lib",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "coffee-script": ">= 1.1.x",
     "mocha": "*",
@@ -15,5 +14,15 @@
     "assert": "*",
     "docco": ">0"
   },
-  "engines": { "node": "0.4 || 0.6 || 0.7" }
+  "engines": {
+    "node": "0.4 || 0.6 || 0.7"
+  },
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gradus/jsoncsv.git"
+  },
+  "scripts": {
+    "test": "cake test"
+  }
 }

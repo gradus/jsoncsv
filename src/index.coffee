@@ -61,6 +61,6 @@ class JsonCsv extends require('events').EventEmitter
       csv += line + "\r\n"
       i++
 
-    return csv
+    return cb(null, csv)
 
 module.exports = new JsonCsv()
