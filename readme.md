@@ -11,6 +11,8 @@
 
 # jsoncsv
 - a json to csv library in javascript/coffeescript
+  WIP.  this is specifically geared toward caremark data.
+  am working on allowing any json format.
 
 ## Install
 
