@@ -21,8 +21,9 @@ class JsonCsv extends require('events').EventEmitter
       for index of json[i]
         if json[i][index] != undefined and typeof(json[i][index]) == 'object'
           for column in columns
-            line += json[i][index]["#{column}"] + "," if json[i][index]["#{column}"] != undefined
-            line += "," if json[i][index]["#{column}"] == '' or json[i][index]["#{column}"] == null
+            field = json[i][index]["#{column}"]
+            line += field + "," if field != undefined
+            line += "," if field == null or field == undefined
         else
           line += json[i][index] + "," if json[i][index] != undefined
           line += '\r\n'
@@ -33,6 +34,8 @@ class JsonCsv extends require('events').EventEmitter
 
 
 module.exports = new JsonCsv()
+
+
 
 
 
