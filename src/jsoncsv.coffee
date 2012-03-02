@@ -26,17 +26,12 @@ class JsonCsv extends require('events').EventEmitter
             line += "," if field == null or field == undefined
         else
           line += json[i][index] + "," if json[i][index] != undefined
-          line += '\r\n'
           i = i + 1
+      line += '\r\n'
+
     line.slice 0, line.Length - 1
     csv += line + "\r\n"
     return cb(null, csv)
 
 
 module.exports = new JsonCsv()
-
-
-
-
-
-
