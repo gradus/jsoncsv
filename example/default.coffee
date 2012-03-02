@@ -1,5 +1,5 @@
 fs = require 'fs'
-jsoncsv = require '../lib/index'
+jsoncsv = require '../lib/jsoncsv'
 FIELDS = [
   'FROM DATE','THRU DATE','CARRIER ID','ACCOUNT ID','GROUP ID',
   'FACILITY ID','MEMBER ID','MEMBER First Name','MEMBER Last Name',

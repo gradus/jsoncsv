@@ -44,6 +44,9 @@ task 'test', ->
 task 'build', ->
   build -> log ":)", green
 
+task 'watch', ->
+  build true, -> log ":)", green
+
 # TODO
 # task 'auto', 'Watch and Run Spec', ->
 #   build true, -> spec -> log ":)", green

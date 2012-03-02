@@ -1,18 +1,29 @@
 {
   "name": "jsoncsv",
   "description": "A JSON to csv converter for nodeJS",
-  "version": "0.0.1-2",
+  "version": "0.0.2",
   "homepage": "",
   "author": "Kris Windham <krsiwindham@gmail.com>",
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/beautifulnode/bam.git"
+  },
   "private": false,
   "main": "./lib",
-  "dependencies": {},
+  "dependencies": {
+    "flatiron": "*",
+    "pkginfo": "*",
+    "path": "*"
+  },
   "devDependencies": {
     "coffee-script": ">= 1.1.x",
     "mocha": "*",
     "should": "*",
     "assert": "*",
     "docco": ">0"
+  },
+  "bin": {
+  "jsoncsv": "./bin/jsoncsv"
   },
   "engines": {
     "node": "0.4 || 0.6 || 0.7"
