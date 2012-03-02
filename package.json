@@ -1,7 +1,7 @@
 {
   "name": "jsoncsv",
   "description": "A JSON to csv converter for nodeJS",
-  "version": "0.0.2-2",
+  "version": "0.0.2-3",
   "homepage": "",
   "author": "Kris Windham <krsiwindham@gmail.com>",
   "repository": {
