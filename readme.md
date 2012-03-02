@@ -11,8 +11,7 @@
 
 # jsoncsv
 - a json to csv library in javascript/coffeescript
-  WIP.  this is specifically geared toward caremark data.
-  am working on allowing any json format.
+  WIP.
 
 ## Install
 
@@ -27,8 +26,10 @@ npm install jsoncsv
 fs = require 'fs'
 csvjs = require 'jsoncsv'
 
+COLUMNS = ['key1','key2','key3','action']
+
 data = fs.readFileSync('data.json').toString()
-jsoncsv.parse data, (err, row) -> 
+jsoncsv.parse data, COLUMNS, (err, row) -> 
   console.log row
 
 ```
@@ -40,9 +41,11 @@ var jsoncsv, data, fs;
 fs = require('fs');
 jsoncsv = require('jsoncsv');
 
+COLUMNS = ['key1','key2','key3','action'];
+
 data = fs.readFileSync('data.json').toString();
 
-jsoncsv.parse(data, function(err, row) {
+jsoncsv.parse(data, COLUMNS, function(err, row) {
   return console.log(row);
 });
 
