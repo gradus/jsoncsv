@@ -1,6 +1,6 @@
 assert = require 'assert'
 should = require 'should'
-jsoncsv = require '../lib/index'
+jsoncsv = require '../lib/jsoncsv'
 
 COLUMNS = [
   'FROM DATE','THRU DATE','CARRIER ID','ACCOUNT ID','GROUP ID',
@@ -12,8 +12,7 @@ COLUMNS = [
   'batch_name','billing_period','disp_ndc','cost','patientId',
   'awp','aac','medication_type','prescription_type, Status, Reason'
 ]
-data = """
-[
+data = [
   {
     "object": {
       "FROM DATE": "01/24/12",
@@ -61,15 +60,15 @@ data = """
     "_events": {}
   }
 ]
-    """
 
 describe 'jsoncsv', ->
   describe '#parse', ->
     it 'is successful', (done) ->
       jsoncsv.parse data, COLUMNS, (err, row) ->
+        console.log row
         row.should == """
           FROM DATE,THRU DATE,CARRIER ID,ACCOUNT ID,GROUP ID,FACILITY ID,MEMBER ID,MEMBER First Name,MEMBER Last Name,PRESC ID,PCP ID,PRESC NAME,PHARMACY,RX #,DATE DISP,REFILL,DRUG NAME,NDC,#DAYS SUP,Decimal QTY,SUBMITTED COST,APPROVED COST,OPAR,FEE,INC FEE,TAX,TAX,PAT PAY,MGMT FEE,AMOUNT PAID,AMOUNT PAID,batch_name,billing_period,disp_ndc,cost,patientId,awp,aac,medication_type,prescription_type, Status, Reason
-01/24/12,01/31/12,2838,2838000,000,,16617725301,JOHNNIE,TESTER,1843533671,,PRESCRIBER,1546424753,6438741,01/11/12,01,FUROSEMIDE   TAB 40MG,00378-0216-10,30,60.000,9.57,3.49,.00,1.50,.00,.00,.00,.00,.00,4.99,4.99,test,201202,00378021610,0.08316666666666667,345,0.1595,0,generic,,validatingClaim,none
+01/24/12,01/31/12,2838,2838000,000,,16617725301,JOHNNIE,TESTER,1843533671,,PRESCRIBER,1546424753,6438741,01/11/12,01,FUROSEMIDE   TAB 40MG,00378-0216-10,30,60.000,9.57,3.49,.00,1.50,.00,.00,.00,.00,.00,4.99,4.99,test,201202,00378021610,0.08316666666666667,345,0.1595,0,generic,rx,validatingClaim,none
         """
       done()
     it 'let user know error occured via parsing', ->

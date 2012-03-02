@@ -1,15 +1,14 @@
 require './jsoncsv'
+
 log = console.log
 
-parseJson = (json, cb) ->
-  log 'Parsing JSON...'
-  log json
-  cb()
+parseJson = (json) ->
+  return log json
 
-module.exports = (json, cb) ->
-  unless json?
-    return console.log('JSON Required!\nex: jsoncsv convert \'{"some":"json"}\'')
-  else
-    return console.log json
-  parseJson json, -> cb()
+
+module.exports = (json=null) ->
+  json = JSON.parse(json)
+  return log 'JSON Required!\nex: jsoncsv convert \'{"some":"json"}\'' unless json?
+  return log json if json != null
+  #parseJson json, -> cb(null, 'done')
 
