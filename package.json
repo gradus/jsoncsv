@@ -9,7 +9,7 @@
     "url": "git://github.com/gradus/jsoncsv.git"
   },
   "private": false,
-  "main": "./lib",
+  "main": "./lib/jsoncsv",
   "dependencies": {
     "flatiron": "*",
     "pkginfo": "*",
