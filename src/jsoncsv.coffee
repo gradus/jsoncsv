@@ -25,7 +25,8 @@ class JsonCsv extends require('events').EventEmitter
             line += field + "," if field != undefined
             line += "," if field == null or field == undefined
         else
-          line += json[i][index] + "," if json[i][index] != undefined
+          if json[i] != undefined
+            line += json[i][index] + "," if json[i][index] != undefined
           i = i + 1
       line += '\r\n'
 

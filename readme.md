@@ -11,7 +11,6 @@
 
 # jsoncsv
 - a json to csv library in javascript/coffeescript
-  WIP on cli converter 
 
 ## Install
 

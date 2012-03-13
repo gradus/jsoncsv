@@ -2,7 +2,7 @@ assert = require 'assert'
 should = require 'should'
 jsoncsv = require '../lib/jsoncsv'
 
-COLUMNS = ['key1','key2','key3','action']
+COLUMNS = ['key1','key2','key3','action','coder']
 json = [ { "data": { "key1" : "val1", "key2" : "val2", "key3" : "val3" }, "action" : "testing" } ]
 describe 'jsoncsv', ->
   describe '#parse alternate json', ->
