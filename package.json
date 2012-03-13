@@ -1,7 +1,7 @@
 {
   "name": "jsoncsv",
   "description": "A JSON to csv converter for nodeJS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "",
   "author": "Kris Windham <krsiwindham@gmail.com>",
   "repository": {
@@ -17,9 +17,6 @@
     "should": "*",
     "assert": "*",
     "docco": ">0"
-  },
-  "bin": {
-    "jsoncsv": "./bin/jsoncsv"
   },
   "engines": {
     "node": "0.4 || 0.6 || 0.7"
