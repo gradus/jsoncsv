@@ -1,4 +1,3 @@
-
         __                                               
        |__|  ______ ____    ____    ____    _________  __
        |  | /  ___//  _ \  /    \ _/ ___\  /  ___/\  \/ /
@@ -23,7 +22,7 @@ npm install jsoncsv
 
 ``` coffeescript
 fs = require 'fs'
-csvjs = require 'jsoncsv'
+jsoncsv = require 'jsoncsv'
 
 COLUMNS = ['key1','key2','key3','action']
 
