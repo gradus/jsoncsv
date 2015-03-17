@@ -8,8 +8,8 @@ class JsonCsv extends require('events').EventEmitter
     # columns should be array of json nodes
     return cb('error no data') unless data?
     return cb('error please provide columns as options') unless columns?
-    data = JSON.stringify(data)
-    json =  JSON.parse(data)
+    data = JSON.parse(data)
+    json = data[Object.keys(data)[0]]
     for j in json
       delete j['_events']
       delete j['_id']
@@ -26,8 +26,9 @@ class JsonCsv extends require('events').EventEmitter
             line += "," if field == null or field == undefined
         else
           if json[i] != undefined
-            line += json[i][index] + "," if json[i][index] != undefined
-          i = i + 1
+            line += json[i][index] if json[i][index] != undefined
+            line += "," if columns.slice(-1)[0] != index
+      i = i + 1
       line += '\r\n'
 
     line.slice 0, line.Length - 1
